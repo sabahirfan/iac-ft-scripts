@@ -1,0 +1,18 @@
+{
+    "gradle": [
+      "https://github.com/hmcts/ia-case-api",
+      "https://github.com/hmcts/ia-case-documents-api",
+      "https://github.com/hmcts/ia-case-notifications-api",
+      "https://github.com/hmcts/ia-home-office-integration-api",
+      "https://github.com/hmcts/ia-timed-event-service",
+      "https://github.com/hmcts/ia-case-access-api",
+      "https://github.com/hmcts/ia-bail-case-api"
+    ],
+    "yarn": [
+      "https://github.com/hmcts/ia-aip-frontend"
+    ],
+    "none": [
+      "https://github.com/hmcts/ia-docker",
+      "https://github.com/hmcts/ia-shared-infrastructure"
+    ]
+  }
