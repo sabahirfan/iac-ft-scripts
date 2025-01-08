@@ -12,6 +12,8 @@ A collection of scripts to help manage Immigration & Asylum Court (IAC) reposito
 - ia-timed-event-service
 - ia-case-access-api
 - ia-bail-case-api
+-ia-hearings-api
+-ia-case-payments-api
 
 ### Yarn Projects
 - ia-aip-frontend
