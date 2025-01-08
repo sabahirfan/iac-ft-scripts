@@ -1,4 +1,4 @@
-# HMCTS IAC Repository Manager
+# IAC-FT Local Setup Manager
 
 A collection of scripts to help manage Immigration & Asylum Court (IAC) repositories for HMCTS. This tool allows you to easily clone and build multiple IAC repositories in parallel using either iTerm2 or Terminal.app on macOS.
 
