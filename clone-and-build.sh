@@ -16,7 +16,7 @@ Options:
     -h, --help             Show this help message
 
 Examples:
-    # Clone all repositories to default path (../repos)
+    # Clone all repositories to default path (.../iac-ft)
     ./clone-and-build.sh
 
     # Clone and build gradle repositories to specific path
