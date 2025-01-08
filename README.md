@@ -34,42 +34,60 @@ A collection of scripts to help manage Immigration & Asylum Court (IAC) reposito
 ## Installation
 
 1. Clone this repository
-2. Make the script executable:
+2. Make the scripts executable:
    ```bash
-   chmod +x clone-and-build.sh
+   chmod +x clone.sh build.sh
    ```
 
 ## Usage
 
+The functionality has been split into two separate scripts for better modularity:
+
+### 1. Clone Script
+
 ```bash
-./clone-and-build.sh [OPTIONS]
+./clone.sh [OPTIONS]
 ```
 
-### Options
+#### Clone Options
 
 - `-c, --config <file>` : JSON config file path (default: repos-config.json)
-- `-p, --path <dir>` : Base directory for cloning/building (default: ../iac-ft)
+- `-p, --path <dir>` : Base directory for cloning (default: ../iac-ft)
 - `-t, --type <type>` : Repository type to process (gradle|yarn|none|all) (default: all)
-- `-b, --build` : Enable build after cloning (default: clone only)
-- `--build-only` : Only build existing repositories (no cloning)
+- `-h, --help` : Show help message
+
+### 2. Build Script
+
+```bash
+./build.sh [OPTIONS]
+```
+
+#### Build Options
+
+- `-c, --config <file>` : JSON config file path (default: repos-config.json)
+- `-p, --path <dir>` : Base directory for building (default: ../iac-ft)
+- `-t, --type <type>` : Repository type to process (gradle|yarn|all) (default: all)
 - `-h, --help` : Show help message
 
 ### Examples
 
-1. Clone all repositories to default path:
-   ```bash
-   ./clone-and-build.sh
-   ```
+1. Clone repositories:
+    ```bash
+    # Clone all repositories to default path
+    ./clone.sh
+    
+    # Clone only Gradle repositories to a specific path
+    ./clone.sh -p ~/projects/hmcts -t gradle
+    ```
 
-2. Clone and build only Gradle repositories to a specific path:
-   ```bash
-   ./clone-and-build.sh -p ~/projects/hmcts -t gradle -b
-   ```
-
-3. Build existing Yarn repositories in default location:
-   ```bash
-   ./clone-and-build.sh -t yarn --build-only
-   ```
+2. Build repositories:
+    ```bash
+    # Build all repositories in default path
+    ./build.sh
+    
+    # Build only Gradle repositories in a specific path
+    ./build.sh -p ~/projects/hmcts -t gradle
+    ```
 
 ## Configuration
 
@@ -85,14 +103,16 @@ You can modify `repos-config.json` to add or remove repositories as needed.
 
 - Parallel processing of repositories using terminal tabs
 - Automatic detection of iTerm2 or fallback to Terminal.app
-- Support for both cloning and building operations
+- Separate scripts for cloning and building operations
 - Flexible repository type filtering
-- Build-only mode for existing repositories
+- Build script automatically skips non-existent repositories
 - Configurable base directory for repository management
 
 ## Notes
 
-- The script is designed exclusively for macOS due to its dependency on AppleScript for terminal manipulation
-- When using iTerm2, it will automatically create new tabs for each repository
-- The script includes built-in delays to prevent overwhelming system resources
+- The scripts are designed exclusively for macOS due to their dependency on AppleScript for terminal manipulation
+- When using iTerm2, they will automatically create new tabs for each repository
+- The scripts include built-in delays to prevent overwhelming system resources
 - Build commands are specific to each repository type (gradle/yarn)
+- The build script will automatically check for repository existence before attempting to build
+- Clone script supports 'none' type repositories, while build script only processes 'gradle' and 'yarn' types
