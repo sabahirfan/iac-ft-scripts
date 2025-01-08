@@ -1,20 +1,20 @@
 {
     "gradle": [
-      "https://github.com/hmcts/ia-case-api",
-      "https://github.com/hmcts/ia-case-documents-api",
-      "https://github.com/hmcts/ia-case-notifications-api",
-      "https://github.com/hmcts/ia-home-office-integration-api",
-      "https://github.com/hmcts/ia-timed-event-service",
-      "https://github.com/hmcts/ia-case-access-api",
-      "https://github.com/hmcts/ia-bail-case-api",
-      "https://github.com/hmcts/ia-hearings-api",
-      "https://github.com/hmcts/ia-case-payments-api"
+      "git@github.com:hmcts/ia-case-api.git",
+      "git@github.com:hmcts/ia-case-documents-api.git",
+      "git@github.com:hmcts/ia-case-notifications-api.git",
+      "git@github.com:hmcts/ia-home-office-integration-api.git",
+      "git@github.com:hmcts/ia-timed-event-service.git",
+      "git@github.com:hmcts/ia-case-access-api.git",
+      "git@github.com:hmcts/ia-bail-case-api.git",
+      "git@github.com:hmcts/ia-hearings-api.git",
+      "git@github.com:hmcts/ia-case-payments-api.git"
     ],
     "yarn": [
-      "https://github.com/hmcts/ia-aip-frontend"
+      "git@github.com:hmcts/ia-aip-frontend.git"
     ],
     "none": [
-      "https://github.com/hmcts/ia-docker",
-      "https://github.com/hmcts/ia-shared-infrastructure"
+      "git@github.com:hmcts/ia-docker.git",
+      "git@github.com:hmcts/ia-shared-infrastructure.git"
     ]
   }
