@@ -1,6 +1,6 @@
 # IAC-FT Local Setup Manager
 
-A collection of scripts to help manage Immigration & Asylum Court (IAC) repositories for HMCTS. This tool allows you to easily clone and build multiple IAC repositories in parallel using either iTerm2 or Terminal.app on macOS.
+A collection of scripts to help manage Immigration & Asylum Court (IAC) repositories for HMCTS. This tool allows you to easily clone and build multiple IAC repositories in parallel using either iTerm2 or Terminal.app on macOS, or Command Prompt on Windows.
 
 ## Supported Repositories
 
@@ -24,6 +24,7 @@ A collection of scripts to help manage Immigration & Asylum Court (IAC) reposito
 
 ## Prerequisites
 
+### For macOS
 - macOS operating system
 - iTerm2 or Terminal.app
 - Git
@@ -31,13 +32,26 @@ A collection of scripts to help manage Immigration & Asylum Court (IAC) reposito
 - Gradle (for Java projects)
 - Node.js and Yarn (for frontend projects)
 
+### For Windows
+- Windows operating system
+- Command Prompt or PowerShell
+- Git (download from https://git-scm.com/download/win)
+- jq (download from https://stedolan.github.io/jq/download/)
+- Gradle (for Java projects)
+- Node.js and Yarn (for frontend projects)
+
 ## Installation
 
+### macOS
 1. Clone this repository
 2. Make the scripts executable:
    ```bash
    chmod +x clone.sh build.sh
    ```
+
+### Windows
+1. Clone this repository
+2. No additional setup required - use the `.bat` files directly
 
 ## Usage
 
@@ -45,8 +59,14 @@ The functionality has been split into two separate scripts for better modularity
 
 ### 1. Clone Script
 
+#### macOS
 ```bash
 ./clone.sh [OPTIONS]
+```
+
+#### Windows
+```batch
+clone.bat [OPTIONS]
 ```
 
 #### Clone Options
@@ -58,8 +78,14 @@ The functionality has been split into two separate scripts for better modularity
 
 ### 2. Build Script
 
+#### macOS
 ```bash
 ./build.sh [OPTIONS]
+```
+
+#### Windows
+```batch
+build.bat [OPTIONS]
 ```
 
 #### Build Options
@@ -73,20 +99,32 @@ The functionality has been split into two separate scripts for better modularity
 
 1. Clone repositories:
     ```bash
-    # Clone all repositories to default path
+    # macOS: Clone all repositories to default path
     ./clone.sh
     
-    # Clone only Gradle repositories to a specific path
+    # macOS: Clone only Gradle repositories to a specific path
     ./clone.sh -p ~/projects/hmcts -t gradle
+
+    # Windows: Clone all repositories to default path
+    clone.bat
+
+    # Windows: Clone only Gradle repositories to a specific path
+    clone.bat -p C:\projects\hmcts -t gradle
     ```
 
 2. Build repositories:
     ```bash
-    # Build all repositories in default path
+    # macOS: Build all repositories in default path
     ./build.sh
     
-    # Build only Gradle repositories in a specific path
+    # macOS: Build only Gradle repositories in a specific path
     ./build.sh -p ~/projects/hmcts -t gradle
+
+    # Windows: Build all repositories in default path
+    build.bat
+
+    # Windows: Build only Gradle repositories in a specific path
+    build.bat -p C:\projects\hmcts -t gradle
     ```
 
 ## Configuration
@@ -101,8 +139,9 @@ You can modify `repos-config.json` to add or remove repositories as needed.
 
 ## Features
 
-- Parallel processing of repositories using terminal tabs
-- Automatic detection of iTerm2 or fallback to Terminal.app
+- Parallel processing of repositories using terminal tabs (macOS) or separate windows (Windows)
+- Automatic detection of iTerm2 or fallback to Terminal.app on macOS
+- Windows support using native Command Prompt
 - Separate scripts for cloning and building operations
 - Flexible repository type filtering
 - Build script automatically skips non-existent repositories
@@ -110,9 +149,19 @@ You can modify `repos-config.json` to add or remove repositories as needed.
 
 ## Notes
 
-- The scripts are designed exclusively for macOS due to their dependency on AppleScript for terminal manipulation
+### macOS
+- The bash scripts are designed for macOS due to their dependency on AppleScript for terminal manipulation
 - When using iTerm2, they will automatically create new tabs for each repository
 - The scripts include built-in delays to prevent overwhelming system resources
+
+### Windows
+- The batch scripts create separate Command Prompt windows for each repository
+- Windows scripts use `jq` for JSON parsing, ensure it's installed and in your PATH
+- Use Windows-style paths with backslashes (e.g., `C:\projects\hmcts`)
+- The scripts include built-in delays to prevent overwhelming system resources
+- Build commands automatically use `gradlew.bat` for Gradle projects on Windows
+
+Common Notes:
 - Build commands are specific to each repository type (gradle/yarn)
 - The build script will automatically check for repository existence before attempting to build
 - Clone script supports 'none' type repositories, while build script only processes 'gradle' and 'yarn' types
