@@ -6,7 +6,9 @@
       "https://github.com/hmcts/ia-home-office-integration-api",
       "https://github.com/hmcts/ia-timed-event-service",
       "https://github.com/hmcts/ia-case-access-api",
-      "https://github.com/hmcts/ia-bail-case-api"
+      "https://github.com/hmcts/ia-bail-case-api",
+      "https://github.com/hmcts/ia-hearings-api",
+      "https://github.com/hmcts/ia-case-payments-api"
     ],
     "yarn": [
       "https://github.com/hmcts/ia-aip-frontend"
