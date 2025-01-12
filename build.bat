@@ -23,7 +23,7 @@ goto :parse_args
 :show_usage
 echo Usage: build.bat [OPTIONS]
 echo.
-echo Build HMCTS repositories using Windows Command Prompt
+echo Build repositories using Windows Command Prompt
 echo.
 echo Options:
 echo     -c, --config ^<file^>     JSON config file path (optional, default: repos-config.json)
@@ -36,7 +36,7 @@ echo     # Build all repositories in default path (..\iac-ft)
 echo     build.bat
 echo.
 echo     # Build gradle repositories in specific path
-echo     build.bat -p C:\projects\hmcts -t gradle
+echo     build.bat -p C:\projects\repositories -t gradle
 exit /b 1
 
 :check_repo_exists

@@ -5,7 +5,7 @@ show_usage() {
     cat << EOF
 Usage: ./clone.sh [OPTIONS]
 
-Clone HMCTS repositories using iTerm2 or Terminal.app
+Clone repositories using iTerm2 or Terminal.app
 
 Options:
     -c, --config <file>     JSON config file path (optional, default: repos-config.json)
@@ -18,7 +18,7 @@ Examples:
     ./clone.sh
 
     # Clone gradle repositories to specific path
-    ./clone.sh -p ~/projects/hmcts -t gradle
+    ./clone.sh -p ~/projects/repositories -t gradle
 EOF
     exit 1
 }

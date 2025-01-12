@@ -5,7 +5,7 @@ show_usage() {
     cat << EOF
 Usage: ./clone-and-build.sh [OPTIONS]
 
-Clone and/or build HMCTS repositories using iTerm2 or Terminal.app
+Clone and/or build repositories using iTerm2 or Terminal.app
 
 Options:
     -c, --config <file>     JSON config file path (optional, default: repos-config.json)
@@ -20,7 +20,7 @@ Examples:
     ./clone-and-build.sh
 
     # Clone and build gradle repositories to specific path
-    ./clone-and-build.sh -p ~/projects/hmcts -t gradle -b
+    ./clone-and-build.sh -p ~/projects/repositories -t gradle -b
 
     # Build existing yarn repositories in default location
     ./clone-and-build.sh -t yarn --build-only
