@@ -8,10 +8,14 @@
       "git@github.com:hmcts/ia-case-access-api.git",
       "git@github.com:hmcts/ia-bail-case-api.git",
       "git@github.com:hmcts/ia-hearings-api.git",
-      "git@github.com:hmcts/ia-case-payments-api.git"
+      "git@github.com:hmcts/ia-case-payments-api.git",
+      "git@github.com:hmcts/wa-task-configuration-template.git",
+      "git@github.com:hmcts/wa-standalone-task-bpmn.git",
+      "git@github.com:hmcts/ia-task-configuration.git"
     ],
     "yarn": [
-      "git@github.com:hmcts/ia-aip-frontend.git"
+      "git@github.com:hmcts/ia-aip-frontend.git",
+      "git@github.com:hmcts/ia-ccd-definitions.git"
     ],
     "none": [
       "git@github.com:hmcts/ia-docker.git",
