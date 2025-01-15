@@ -10,7 +10,7 @@ function Show-Usage {
     Write-Host @"
 Usage: .\build.ps1 [OPTIONS]
 
-Build HMCTS repositories using Windows Command Prompt
+Build repositories using Windows Command Prompt
 
 Options:
     -Config <file>     JSON config file path (optional, default: repos-config.json)
@@ -23,7 +23,7 @@ Examples:
     .\build.ps1
 
     # Build gradle repositories in specific path
-    .\build.ps1 -Path C:\projects\hmcts -Type gradle
+    .\build.ps1 -Path C:\projects\repositories -Type gradle
 "@
     exit 1
 }

@@ -103,13 +103,13 @@ build.bat [OPTIONS]
     ./clone.sh
     
     # macOS: Clone only Gradle repositories to a specific path
-    ./clone.sh -p ~/projects/hmcts -t gradle
+    ./clone.sh -p ~/projects/repositories -t gradle
 
     # Windows: Clone all repositories to default path
     clone.bat
 
     # Windows: Clone only Gradle repositories to a specific path
-    clone.bat -p C:\projects\hmcts -t gradle
+    clone.bat -p C:\projects\repositories -t gradle
     ```
 
 2. Build repositories:
@@ -118,13 +118,13 @@ build.bat [OPTIONS]
     ./build.sh
     
     # macOS: Build only Gradle repositories in a specific path
-    ./build.sh -p ~/projects/hmcts -t gradle
+    ./build.sh -p ~/projects/repositories -t gradle
 
     # Windows: Build all repositories in default path
     build.bat
 
     # Windows: Build only Gradle repositories in a specific path
-    build.bat -p C:\projects\hmcts -t gradle
+    build.bat -p C:\projects\repositories -t gradle
     ```
 
 ## Configuration
@@ -157,7 +157,7 @@ You can modify `repos-config.json` to add or remove repositories as needed.
 ### Windows
 - The batch scripts create separate Command Prompt windows for each repository
 - Windows scripts use `jq` for JSON parsing, ensure it's installed and in your PATH
-- Use Windows-style paths with backslashes (e.g., `C:\projects\hmcts`)
+- Use Windows-style paths with backslashes (e.g., `C:\projects\repositories`)
 - The scripts include built-in delays to prevent overwhelming system resources
 - Build commands automatically use `gradlew.bat` for Gradle projects on Windows
 

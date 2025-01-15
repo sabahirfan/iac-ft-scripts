@@ -23,7 +23,7 @@ goto :parse_args
 :show_usage
 echo Usage: clone.bat [OPTIONS]
 echo.
-echo Clone HMCTS repositories using Windows Command Prompt
+echo Clone repositories using Windows Command Prompt
 echo.
 echo Options:
 echo     -c, --config ^<file^>     JSON config file path (optional, default: repos-config.json)
@@ -36,7 +36,7 @@ echo     # Clone all repositories to default path (..\iac-ft)
 echo     clone.bat
 echo.
 echo     # Clone gradle repositories to specific path
-echo     clone.bat -p C:\projects\hmcts -t gradle
+echo     clone.bat -p C:\projects\repositories -t gradle
 exit /b 1
 
 :check_git

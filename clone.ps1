@@ -10,7 +10,7 @@ function Show-Usage {
     Write-Host @"
 Usage: .\clone.ps1 [OPTIONS]
 
-Clone HMCTS repositories using Windows Command Prompt
+Clone repositories using Windows Command Prompt
 
 Options:
     -Config <file>     JSON config file path (optional, default: repos-config.json)
@@ -23,7 +23,7 @@ Examples:
     .\clone.ps1
 
     # Clone gradle repositories to specific path
-    .\clone.ps1 -Path C:\projects\hmcts -Type gradle
+    .\clone.ps1 -Path C:\projects\repositories -Type gradle
 "@
     exit 1
 }

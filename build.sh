@@ -5,7 +5,7 @@ show_usage() {
     cat << EOF
 Usage: ./build.sh [OPTIONS]
 
-Build HMCTS repositories using iTerm2 or Terminal.app
+Build repositories using iTerm2 or Terminal.app
 
 Options:
     -c, --config <file>     JSON config file path (optional, default: repos-config.json)
@@ -18,7 +18,7 @@ Examples:
     ./build.sh
 
     # Build gradle repositories in specific path
-    ./build.sh -p ~/projects/hmcts -t gradle
+    ./build.sh -p ~/projects/repositories -t gradle
 EOF
     exit 1
 }
